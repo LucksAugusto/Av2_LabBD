@@ -5,23 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
-
 
 @ManagedBean
-@ViewScoped
 public class TesteMB implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+	
 	private Atleta atleta = new Atleta();
 	private List<Atleta> lista_atl = new ArrayList<>();
 	
-	public String teste() {
+	public void teste() {
 		System.out.println("Hello");
-		return "Ola";
 	}
 
 	public Atleta getAtleta() {
