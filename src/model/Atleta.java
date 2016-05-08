@@ -3,13 +3,10 @@ package model;
 public class Atleta {
 	private int id;
 	private String nome;
+	private int id_prova;
 	private char sexo;
 	private String pais;
-
-	public Atleta() {
-
-	}
-
+	
 	public int getId() {
 		return id;
 	}
@@ -21,6 +18,12 @@ public class Atleta {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	public int getId_prova() {
+		return id_prova;
+	}
+	public void setId_prova(int id_prova) {
+		this.id_prova = id_prova;
 	}
 	public char getSexo() {
 		return sexo;
@@ -34,7 +37,5 @@ public class Atleta {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
-
-
 
 }

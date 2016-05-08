@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<style>
+body {
+	background-image: url("./piscina.jpg");
+}
+
+#titulo {
+	text-align: center;
+}
+
+.corpo {
+	text-align: left;
+}
+
+.centerForm {
+	text-align: center;
+}
+.rightForm {
+	text-align: right;
+}
+</style>
+	<title>Paises</title>
+</h:head>
+<h:body>
+	<br />
+	<b:column col-lg="12">
+		<b:panel title="Paises" look="primary" id="titulo">
+			<div class="corpo">
+				<h:form>
+					<b:row class="centerForm">
+						<b:column col-lg="4" offset="4">
+							<b:commandButton value="Voltar" look="primary"
+								action="#{redirectMB.principal}" />
+						</b:column>
+					</b:row>
+				</h:form>
+				<hr />
+				<b:dataTable value="#{paisMB.paisList}" var="pais" class="rightForm">
+					<b:column headerText="Sigla">
+						<f:facet name="header">
+							<h:outputText value="Sigla"/>
+						</f:facet>
+						<h:outputText value="#{pais.sigla}" />
+					</b:column>
+					<b:column headerText="Nome">
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{pais.nome}" />
+					</b:column>
+				</b:dataTable>
+			</div>
+		</b:panel>
+	</b:column>
+</h:body>
+</html>
