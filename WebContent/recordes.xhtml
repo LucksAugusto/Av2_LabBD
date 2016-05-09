@@ -10,46 +10,56 @@
 body {
 	background-image: url("./piscina.jpg");
 }
+
 #titulo {
 	text-align: center;
 }
+
 .corpo {
 	text-align: left;
 }
+
 .centerForm {
 	text-align: center;
+}
+
+.colBlue {
+	background-color: lightblue;
 }
 </style>
 	<title>Recordes</title>
 </h:head>
 <h:body>
-<br/>
+	<br />
 	<b:column col-lg="12">
 		<b:panel title="Recordes" look="primary" id="titulo">
 			<div class="corpo">
 				<h:form>
 					<b:row class="centerForm">
 						<b:column col-lg="4" offset="4">
-							<b:commandButton value="Voltar" look="primary" action="#{redirectMB.principal}"/>
+							<b:commandButton value="Voltar" look="primary"
+								action="#{redirectMB.principal}" />
 						</b:column>
 					</b:row>
 				</h:form>
-				<hr/>
-				<b:dataTable>
-					<b:column headerText="Id">
-						<h:outputText value="Id" />
-					</b:column>
-					<b:column headerText="Nome">
-						<h:outputText value="Nome" />
-					</b:column>
-					<b:column headerText="País">
-						<h:outputText value="País" />
-					</b:column>
+				<hr />
+				<b:dataTable value="#{recordeMB.recordeList}" var="recorde">
 					<b:column headerText="Prova">
-						<h:outputText value="Prova" />
+						<f:facet name="header">
+							<h:outputText value="Prova" />
+						</f:facet>
+						<div class="colBlue">
+							<h:outputText value="#{recorde.nomeProva}" />
+						</div>
 					</b:column>
-					<b:column headerText="Tempo">
-						<h:outputText value="Tempo" />
+					<b:column headerText="Pontuação">
+						<f:facet name="header">
+							<h:outputText value="Pontuação" />
+						</f:facet>
+						<div class="colBlue">
+							<h:outputText value="#{recorde.recordeDistancia}" />
+							<h:outputText value="#{recorde.recordeTempo}" />
+						</div>
 					</b:column>
 				</b:dataTable>
 			</div>

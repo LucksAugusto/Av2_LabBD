@@ -1,12 +1,10 @@
 package model;
 
-import java.util.Date;
-
 public class Recorde {
 
 	private int id;
 	private String nomeProva;
-	private Date recordeTempo;
+	private String recordeTempo;
 	private int recordeDistancia;
 	
 	public int getId() {
@@ -21,10 +19,10 @@ public class Recorde {
 	public void setNomeProva(String nomeProva) {
 		this.nomeProva = nomeProva;
 	}
-	public Date getRecordeTempo() {
+	public String getRecordeTempo() {
 		return recordeTempo;
 	}
-	public void setRecordeTempo(Date recordeTempo) {
+	public void setRecordeTempo(String recordeTempo) {
 		this.recordeTempo = recordeTempo;
 	}
 	public int getRecordeDistancia() {

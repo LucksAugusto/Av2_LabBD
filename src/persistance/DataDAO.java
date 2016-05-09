@@ -3,9 +3,7 @@ package persistance;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import model.Atleta;
 import model.Nota;
@@ -71,9 +69,8 @@ public class DataDAO implements IDataDAO {
 			rec.setNomeProva(rs.getString(2));
 			String aux = rs.getString(3);
 			if (aux.contains(":")) {
-				SimpleDateFormat d =  new SimpleDateFormat("HH:mm:ss:SSS");
-				Date date = d.parse(aux);
-				rec.setRecordeTempo(date);
+				//SimpleDateFormat d =  new SimpleDateFormat("HH:mm:ss:SSS");
+				rec.setRecordeTempo(((aux)));
 			} else {
 				int convert = Integer.parseInt(aux);
 				rec.setRecordeDistancia(convert);
@@ -99,9 +96,7 @@ public class DataDAO implements IDataDAO {
 			rec.setNomeProva(rs.getString(2));
 			String aux = rs.getString(3);
 			if (aux.contains(":")) {
-				SimpleDateFormat d =  new SimpleDateFormat("HH:mm:ss:SSS");
-				Date date = d.parse(aux);
-				rec.setRecordeTempo(date);
+				rec.setRecordeTempo(((aux)));
 			} else {
 				int convert = Integer.parseInt(aux);
 				rec.setRecordeDistancia(convert);
