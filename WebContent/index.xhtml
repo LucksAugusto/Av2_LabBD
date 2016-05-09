@@ -34,7 +34,7 @@ body {
 					<b:row class="centerForm">
 						<b:column col-lg="2" offset="1">
 							<b:commandButton value="Simular" look="primary"
-								action="#{testeMB.teste}" />
+								action="#{notaMB.simula}" />
 						</b:column>
 						<b:column col-lg="2">
 							<b:commandButton value="Atletas" look="primary"
@@ -54,21 +54,42 @@ body {
 					</b:row>
 				</h:form>
 				<hr />
-				<b:dataTable>
-					<b:column headerText="Id">
-						<h:outputText value="Id" />
+				<b:dataTable value="#{notaMB.notaLista}" var="nota">
+					<b:column headerText="Bateria">
+						<f:facet name="header">
+							<h:outputText value="Bateria"/>
+						</f:facet>
+						<h:outputText value="#{nota.id_bat}" />
 					</b:column>
 					<b:column headerText="Nome">
-						<h:outputText value="Nome" />
-					</b:column>
-					<b:column headerText="País">
-						<h:outputText value="País" />
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{nota.nome}" />
 					</b:column>
 					<b:column headerText="Prova">
-						<h:outputText value="Prova" />
+						<f:facet name="header">
+							<h:outputText value="Prova"/>
+						</f:facet>
+						<h:outputText value="#{nota.nomeProva}" />
 					</b:column>
-					<b:column headerText="Tempo">
-						<h:outputText value="Tempo" />
+					<b:column headerText="Sexo">
+						<f:facet name="header">
+							<h:outputText value="Sexo"/>
+						</f:facet>
+						<h:outputText value="#{nota.sexo}" />
+					</b:column>
+					<b:column headerText="Pais">
+						<f:facet name="header">
+							<h:outputText value="Pais"/>
+						</f:facet>
+						<h:outputText value="#{nota.pais}" />
+					</b:column>
+					<b:column headerText="Tempo/Distancia">
+						<f:facet name="header">
+							<h:outputText value="Tempo/Distancia"/>
+						</f:facet>
+						<h:outputText value="#{nota.m}" />
 					</b:column>
 				</b:dataTable>
 			</div>

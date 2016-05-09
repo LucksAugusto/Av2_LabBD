@@ -35,21 +35,30 @@ body {
 					</b:row>
 				</h:form>
 				<hr/>
-				<b:dataTable>
-					<b:column headerText="Id">
-						<h:outputText value="Id" />
+				<b:dataTable value="#{atletaMB.atletaList}" var="atleta">
+					<b:column headerText="ID">
+						<f:facet name="header">
+							<h:outputText value="ID"/>
+						</f:facet>
+						<h:outputText value="#{atleta.id}" />
 					</b:column>
 					<b:column headerText="Nome">
-						<h:outputText value="Nome" />
+						<f:facet name="header">
+							<h:outputText value="Nome"/>
+						</f:facet>
+						<h:outputText value="#{atleta.nome}" />
 					</b:column>
-					<b:column headerText="País">
-						<h:outputText value="País" />
+					<b:column headerText="Sexo">
+						<f:facet name="header">
+							<h:outputText value="Sexo"/>
+						</f:facet>
+						<h:outputText value="#{atleta.sexo}" />
 					</b:column>
-					<b:column headerText="Prova">
-						<h:outputText value="Prova" />
-					</b:column>
-					<b:column headerText="Tempo">
-						<h:outputText value="Tempo" />
+					<b:column headerText="Pais">
+						<f:facet name="header">
+							<h:outputText value="Pais"/>
+						</f:facet>
+						<h:outputText value="#{atleta.pais}" />
 					</b:column>
 				</b:dataTable>
 			</div>
